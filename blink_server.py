@@ -32,7 +32,7 @@ while True:
 	msg = socket.recv()
 	print "server recieved " + msg
 	socket.send("reply from server from hearing \""+msg+"\"")
-	ser.write("hello")
+	ser.write("hello\n")
 	time.sleep(1)
 
 
