@@ -35,13 +35,3 @@ while True:
 	ser.write("hello\n")
 	time.sleep(1)
 
-
-''' 
-pyserial setup?
-context
-socket - type
-loop
-block on recv
-reply with command recieved: <command>
-if command was "on/off" toggle led
-'''

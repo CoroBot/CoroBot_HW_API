@@ -1,4 +1,8 @@
 /*
+ This example has been modified very slightly to blink
+ pin 13 LED when recieving a message over serial.
+
+
   Serial Event example
  
  When new serial data arrives, this sketch adds it to a String.

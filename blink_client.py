@@ -10,16 +10,6 @@ By Keenan Fejeran
 import zmq
 import time
 
-'''
-context
-socket
-loop
-
-user input
-zmq send OVER THE INTERNET
-print server response
-'''
-
 #Create a context and socket
 context = zmq.Context()
 socket = context.socket(zmq.PAIR)
