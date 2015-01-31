@@ -9,24 +9,32 @@ By Keenan Fejeran
 1/31/2015
 '''
 
-import zmq
-#import spark
+#import zmq
+from SparkPython import spark
+from SparkPython import hello
 
 
 #Create a context and socket
-context = zmq.Context()
-socket = context.socket(zmq.PAIR)
+#context = zmq.Context()
+#socket = context.socket(zmq.PAIR)
 
 #connect to server
-socket.connect("tcp://localhost:5656")
+#socket.connect("tcp://localhost:5656")
 
-def drive(speed):
-	socket.send('MOT', zmq.SNDMORE)
-	socket.send(speed)
-	print "drive() done"
+#Setup the spark library
+#spark.setSocket(socket)
+#sparkConfig()
+
+#def drive(speed):
+#	socket.send('MOT', zmq.SNDMORE)
+#	socket.send(speed)
+#	print "drive() done"
 
 #send multipart zmq messages?
 
 #begin motor method
 #spark.drive(
-drive("Fast")
+#drive("Fast")
+hello.helloworld()
+#spark.drive("Fast", socket)
+spark.drive(2)
