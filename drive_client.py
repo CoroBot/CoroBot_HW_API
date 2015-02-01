@@ -8,19 +8,18 @@ Calls the spark API.
 By Keenan Fejeran
 1/31/2015
 '''
-#imports, currently from a local package
+#imports, currently from a local module
 #from SparkPython.spark import *
 from SparkControl import *
 
-#example API calls
-#spark.ID()
-#spark.version()
+#example API calls 
+motorDir(1234, "FORWARD") #set all motors direction to forward
+motorPWM(1, 50) #set motor 1 speed to 50%
 
-#spark.motorPWM(1, 50)
-#spark.motorDir(1, 1)
-#drive = spark.drive()
+print "Robot Type: " + ID()
+print "Firmware Version: " + version()
 
-#drive(3)
-#SparkControl.motorDir(SparkControl.FORWARD)
-motorDir(1, "FOWARD")
-motorPWM(1234, 50)
+#alternative ways we could set up the api calls, using the dot call.
+#print spark.ID()
+#print spark.version()
+
