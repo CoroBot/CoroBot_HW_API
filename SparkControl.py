@@ -24,7 +24,11 @@ socket.connect("tcp://localhost:5656")
 #        direction is either forward or reverse, 1 or 0 respectively
 #returns: none
 def motorDir(motornum, direction):
-	socket.send("MOT||"+str(motornum)+"||DIR||"+str(direction))
+	#socket.send("MOT||"+str(motornum)+"||DIR||"+str(direction))
+	socket.send("MOT", zmq.SNDMORE)
+	socket.send(str(motornum), zmq.SNDMORE)
+	socket.send("DIR", zmq.SNDMORE)
+	socket.send(str(direction))
 
 def motorPWM(motornum, duty_cycle):
 	socket.send("MOT||"+str(motornum)+"||SPEED||"+ str(duty_cycle))

@@ -27,8 +27,12 @@ while True:
 	msg = socket.recv()
 	
 	#decypher commands
+	print msg
+	print str(socket.getsockopt(zmq.RCVMORE))
+	'''
 	if "VERSION" in msg:
 		socket.send(VERSION)
 	elif "TYPE" in msg:
 		socket.send(TYPE)
 	else: print msg 
+	'''
