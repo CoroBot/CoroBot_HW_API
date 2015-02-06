@@ -32,6 +32,10 @@ def motorDir(motornum, direction):
 
 def motorPWM(motornum, duty_cycle):
 	socket.send("MOT||"+str(motornum)+"||SPEED||"+ str(duty_cycle))
+	socket.send("MOT", zmq.SNDMORE)
+	socket.send(str(motornum), zmq.SNDMORE)
+	socket.send("SPEED", zmq.SNDMORE)
+	socket.send(str(duty_cycle))
 
 def ID():
 	socket.send("ID||1||TYPE")
