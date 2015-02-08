@@ -15,13 +15,12 @@ By Keenan Fejeran
 
 from SparkControl import *
 
-
-
 #example API calls 
 motorDir(1234, "FORWARD") #set all motors direction to forward
-print("\n\n\n")
-motorPWM(1, 50) #set motor 1 speed to 50%
 
+#motorPWM(1, 50) #set motor 1 speed to 50%
+
+#API calls that get a response
 #print "Robot Type: " + ID()
 #print "Firmware Version: " + version()
 
