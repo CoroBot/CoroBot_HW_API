@@ -9,9 +9,13 @@ By Keenan Fejeran
 1/31/2015
 '''
 #imports, currently from a local module
-#from SparkPython.spark import *
-from SparkControl import *
+
+#the following import should work, but isn't in my environment.
 #import SparkControl
+
+from SparkControl import *
+
+
 
 #example API calls 
 motorDir(1234, "FORWARD") #set all motors direction to forward
