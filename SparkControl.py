@@ -30,7 +30,7 @@ def motorDir(motornum, direction):
 	#	send a request to read motor status instead and return value
 
 def motorPWM(motornum, duty_cycle):
-	send_multipart(["MOT", str(motornum), "SPEED", str(duty_cycle)])
+	socket.send_multipart(["MOT", str(motornum), "SPEED", str(duty_cycle)])
 
 def ID():
 	socket.send("ID", zmq.SNDMORE)
