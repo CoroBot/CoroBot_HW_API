@@ -28,7 +28,7 @@ while True:
 	
 	#decypher commands
 	print msg
-	print str(socket.getsockopt(zmq.RCVMORE))
+	#print str(socket.getsockopt(zmq.RCVMORE)) #testing SNDMORE flag
 	'''
 	if "VERSION" in msg:
 		socket.send(VERSION)

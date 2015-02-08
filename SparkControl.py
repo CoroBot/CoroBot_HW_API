@@ -64,11 +64,11 @@ def cameraPWR(power):
 #inputs: parts is an array of objects to send
 #
 #returns: none	
-def sendMultipart(parts)
+def sendMultipart(parts):
 	#send pieces, with SNDMORE flag
 	for i in range(len(parts) - 1):
 		socket.send(parts[i], zmq.SNDMORE) #or str value of
 	
 	#send last part, without SNDMORE flag
-	socket.send(parts[parts.length - 1])
+	socket.send(parts[len(parts) - 1])
 	
