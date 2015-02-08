@@ -11,6 +11,7 @@ By Keenan Fejeran
 #imports, currently from a local module
 #from SparkPython.spark import *
 from SparkControl import *
+#import SparkControl
 
 #example API calls 
 motorDir(1234, "FORWARD") #set all motors direction to forward
