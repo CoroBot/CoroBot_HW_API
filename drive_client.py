@@ -19,7 +19,8 @@ from SparkControl import *
 
 #example API calls 
 motorDir(1234, "FORWARD") #set all motors direction to forward
-#motorPWM(1, 50) #set motor 1 speed to 50%
+print("\n\n\n")
+motorPWM(1, 50) #set motor 1 speed to 50%
 
 #print "Robot Type: " + ID()
 #print "Firmware Version: " + version()
