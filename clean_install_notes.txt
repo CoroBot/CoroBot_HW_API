@@ -1,0 +1,29 @@
+Setup notes:
+
+Raspbian
+Download tarball for Python3.4 and ZMQ
+
+Download prereqs:
+
+sudo apt-get install libtool pkg-config build-essential autoconf automake libssl-dev openssl
+
+Both of these can be created with the ./configure
+make
+sudo make install
+
+but with the Python3.4, you might need to include a flag that forces PIP to be installed:
+
+./configure --with-ensurepip=install
+
+And with ZMQ, run "sudo ldconfig" after "sudo make install".
+
+Ensure that PIP gets installed, as it is the easiest
+way to install python ZMQ bindings.
+
+https://docs.python.org/3/library/ensurepip.html
+https://docs.python.org/3/installing/
+http://stackoverflow.com/questions/22592686/compiling-python-3-4-is-not-copying-pip
+
+
+Run next:
+sudo python3.4 -m pip install pyzmq
