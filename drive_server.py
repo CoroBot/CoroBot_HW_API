@@ -23,11 +23,16 @@ print "Server ready for commands."
 
 #listen for commands
 while True:
+	msg = recv_multipart()	
+
+	socket.send_multipart(msg)
+	#just echo multipart messages.
+
 	#block until message recieved
-	msg = socket.recv()
+	#msg = socket.recv()
 	
 	#decypher commands
-	print msg
+	#print msg
 	#print str(socket.getsockopt(zmq.RCVMORE)) #testing SNDMORE flag
 	'''
 	if "VERSION" in msg:

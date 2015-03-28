@@ -16,7 +16,8 @@ By Keenan Fejeran
 from SparkControl import *
 
 #example API calls 
-motorDir(1234, "FORWARD") #set all motors direction to forward
+#motorDir(1234, "FORWARD") #set all motors direction to forward
+print setMotorDir(1, "FORWARD")
 
 #motorPWM(1, 50) #set motor 1 speed to 50%
 
