@@ -86,7 +86,6 @@ def getMotorPWM(motornum, duty_cycle):
 	socket.send_multipart(["MOT", str(motornum), "SPEED"])
 	return pollForMultipartMsg(ARGUMENT);
 	
-	
 def ID():
 	socket.send_multipart(["ID", "1", "TYPE"]) #should the second "part" be static? 
 						   #or is this a special case?
@@ -96,22 +95,59 @@ def version():
 	socket.send_multipart(["ID", "1", "VERSION"])
 	return pollForMultipartMsg(ARGUMENT);
 	
-def cameraPWR(power):
+def setCameraPower(power):
 	socket.send_multipart(["CAM", "1", "PWR", str(power)])
 	return pollForMultipartMsg(ARGUMENT);
 
-#Legacy motorDir function.
-#
-#######################################################
-#motorDir(motornum, direction)
-#Sets the direction for the motor indicated.
-#inputs: motornum is the motor to set
-#        direction is either forward or reverse, 1 or 0 respectively
-#returns: none
-#def motorDir(motornum, direction):
-	#socket.send_multipart(["MOT", str(motornum), "DIR", str(direction)])
-	#add functionality to read motor direction?
-	#if direction == NULL:
-	#	send a request to read motor status instead and return value
+def getCameraPower():
+	socket.send_multipart(["CAM", "1", "PWR"])
+	return pollForMultipartMsg(ARGUMENT);
 	
-	#OR, do we need to write two methods, get/setMotorDir() ?
+def setLEDcolor(red, green, blue):
+	color_triplet = str(red)+","+str(green)+","+"str(blue)
+	socket.send_multipart(["LED", "1", "COLOR", color_triplet])
+	return pollForMultipartMsg(ARGUMENT)
+		
+def readLEDcolor():
+	socket.send_multipart(["LED", "1", "COLOR"])
+	return pollForMultipartMsg(ARGUMENT)
+
+def reset():
+	socket.send_multipart(["PWR", "1", "RESET", "SQUEAMISH OSSIFRAGE"])
+	return pollForMultipartMsg(ARGUMENT)
+	
+#GPIO
+def setPinMode(pin, mode): #need analog and digital flags?
+	socket.send_multipart(["GPIO", "1", "MODE", str(mode)])
+	return pollForMultipartMsg(ARGUMENT)
+	
+#def getPinMode(pin): 
+#	socket.send_multipart(["GPIO", "1", "MODE"])
+#	return pollForMultipartMsg(ARGUMENT)	
+
+def pinRead(pin):
+	return -1
+
+def pinWrite(pin, val):
+	return -1
+	
+#SPI
+def SPIbegin():
+	return -1
+	
+def SPIend():
+	return -1
+
+def SPItransfer(val):
+	return -1
+	
+#I2C
+def I2Csetup():
+	return -1
+
+def I2Cread(address):
+	return -1
+	
+def I2Cwrite(address, val):
+	return -1
+
