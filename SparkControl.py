@@ -15,7 +15,7 @@ import time
 TIMEOUT = 500 #milliseconds to wait for a reply to a command
 
 TIMEOUT_ERROR = -1 #indicates that a response was required, but didn't come in time.
-				   #If this error is returned, there's no guarantee the robot got the command.
+		   #If this error is returned, there's no guarantee the robot got the command.
 
 ARGUMENT = 4 #indicates which part of a message is returned by the locally defined poll function.				   
 				   
@@ -89,7 +89,7 @@ def getMotorPWM(motornum, duty_cycle):
 	
 def ID():
 	socket.send_multipart(["ID", "1", "TYPE"]) #should the second "part" be static? 
-											   #or is this a special case?
+						   #or is this a special case?
 	return pollForMultipartMsg(ARGUMENT);
 
 def version():
