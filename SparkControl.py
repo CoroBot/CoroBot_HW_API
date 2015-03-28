@@ -17,7 +17,7 @@ TIMEOUT = 500 #milliseconds to wait for a reply to a command
 TIMEOUT_ERROR = -1 #indicates that a response was required, but didn't come in time.
 		   #If this error is returned, there's no guarantee the robot got the command.
 
-ARGUMENT = 4 #indicates which part of a message is returned by the locally defined poll function.				   
+ARGUMENT = 3 #indicates which part of a message is returned by the locally defined poll function.				   
 				   
 #ZMQ Setup
 context = zmq.Context()
@@ -46,7 +46,7 @@ def pollForMultipartMsg(partToReturn):
 	
 	response = socket.recv_multipart(zmq.NOBLOCK) #should not need to block if polling returned >0
 
-	if (partToReturn == NULL): #by default, return the 4th part of the message.
+	if (not partToReturn): #by default, return the 4th part of the message.
 		partToReturn = ARGUMENT;
 	
 	return response.pop(partToReturn) #return the Nth part of the multipart message
@@ -104,7 +104,7 @@ def getCameraPower():
 	return pollForMultipartMsg(ARGUMENT);
 	
 def setLEDcolor(red, green, blue):
-	color_triplet = str(red)+","+str(green)+","+"str(blue)
+	color_triplet = str(red)+","+str(green)+","+str(blue)
 	socket.send_multipart(["LED", "1", "COLOR", color_triplet])
 	return pollForMultipartMsg(ARGUMENT)
 		

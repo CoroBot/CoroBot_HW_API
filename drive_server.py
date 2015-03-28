@@ -23,7 +23,8 @@ print "Server ready for commands."
 
 #listen for commands
 while True:
-	msg = recv_multipart()	
+	print "loop"
+	msg = socket.recv_multipart()	
 
 	socket.send_multipart(msg)
 	#just echo multipart messages.

@@ -17,7 +17,10 @@ from SparkControl import *
 
 #example API calls 
 #motorDir(1234, "FORWARD") #set all motors direction to forward
-print setMotorDir(1, "FORWARD")
+i = 0
+while i<5:
+	i = i + 1
+	print setMotorDir(1, "FORWARD")
 
 #motorPWM(1, 50) #set motor 1 speed to 50%
 
@@ -28,4 +31,3 @@ print setMotorDir(1, "FORWARD")
 #alternative ways we could set up the api calls, using the dot call.
 #print spark.ID()
 #print spark.version()
-
