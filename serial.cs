@@ -1,3 +1,5 @@
+using System.IO.Ports;
+
 namespace ConsoleApplication1
 {
 	class Program
